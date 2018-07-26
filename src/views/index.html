@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NodeJS Webapps Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- In the head -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    
+    <header class="top-nav fade-in">
+        <div class="grid-container">
+            <div class="column-24">
+                <div class="tablet-hide">
+                    <a href="#" class="top-nav-title"><span id="nodejs_title"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2000px-Node.js_logo_2015.svg.png" style="height:25px;"></span> Webapps Creator</a>
+                    <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+                    </nav>   
+                </div>
+
+                <nav class="class-top-nav-list right" role="navigation" aria-labelledby="usernav">
+                    
+                    <a class="top-nav-link icon-ui-menu margin-left-1 js-modal-toggle" data-modal="info" href="#" style="color: #fefefe">More Info</a>
+                    
+                    <div class="js-modal modal-overlay modifier-class" data-modal="info">
+                        <div class="modal-content column-12" role="dialog" aria-labelledby="modal" role="dialog">
+                    
+                            <a class="js-modal-toggle right" href="#" aria-label="close-modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32" class="svg-icon">
+                                    <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"
+                                    />
+                                </svg>
+                            </a>
+                    
+                            <h3 class='trailer-half' style="text-align: center">NodeJS webapps creator</h3>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>Web application created to provide a four-steps method to build an endless number of GIS webapps with customized title, location, basemap and theme color.</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>The app uses NodeJS and ExpressJS for API, routes creation and server-side processing and Calcite Web for front-end.</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>GIS capabilities and web maps are available through ArcGIS API for JavaScript.</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>Each GIS webapp created is hosted on the machine where the main app (project) is deployed.</p>
+                    
+                            <div class="text-right">
+                                <button class="btn js-modal-toggle">Got it</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+    
+                <div class="tablet-show top-nav-flex">
+                    <header class="top-nav-flex-title">
+                        <a href="/" class="top-nav-link"><span id="nodejs_title">NodeJS</span> webapps creator
+                        </a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-container" style="margin-top: 1rem;">
+        <div class="column-24">
+            
+            <label>
+                 Title of the map/app
+                <input type="text" class="modifier-class" id="projectTitle" required>
+            </label>
+
+            <label>
+                 Location
+                <input type="text" class="modifier-class" id="projectLocation" required>
+            </label>
+
+            <label>
+                Basemap
+                <select class="select-full" id="projectBasemap">
+                    <option value="">Streets</option>
+                    <option value="">Satellite</option>
+                    <option value="">Hybrid</option>
+                    <option value="">Topo</option>
+                    <option value="">Gray</option>
+                    <option value="">Dark-Gray</option>
+                    <option value="">Oceans</option>
+                    <option value="">National-Geographic</option>
+                    <option value="">Terrain</option>
+                    <option value="">OSM</option>
+                    <option value="">Dark-Gray-Vector</option>
+                    <option value="">Gray-Vector</option>
+                    <option value="">Streets-Vector</option>
+                    <option value="">Topo-Vector</option>
+                    <option value="">Streets-Night-Vector</option>
+                    <option value="">Streets-Relief-Vector</option>
+                    <option value="">Streets-Navigation-Vector</option>
+                </select>
+            </label>
+
+            <label>
+                App color
+                <select class="select-full" id="projectAppColor">
+                    <option value="">Black</option>
+                    <option value="">White</option>
+                </select>
+            </label>
+            
+            <button class="btn btn-fill" id="btnCreateApp" disabled> Create app </button>
+           
+            
+        </div>
+    </div>
+
+    <footer class="footer leader-3" id="footer">
+        <div class="grid-container">
+            <nav class="column-8">
+                <h6 class="font-size-1">
+                    <strong>#geodev</strong>
+                </h6>
+    
+                <p class="leader-1 font-size--2">
+                    <strong>Follow Me</strong>
+                    </span>
+                </p>
+                <section class="footer-social-nav">
+                    <a class="icon-social-twitter" href="https://twitter.com/ialixandroae" target="_blank"></a>
+                    <a class="icon-social-github" href="https://github.com/ialixandroae" target="_blank"></a>
+                    <a class="icon-social-linkedin" href="https://www.linkedin.com/in/ialixandroae/" target="_blank"></a>
+                </section>
+            </nav>
+    
+            <nav class="column-4 leader-1">
+                <h6 class="font-size--2">
+                    <strong>Project resources
+                    </strong>
+                </h6>
+                <ul class="list-plain font-size--2">
+                    <li>
+                        <a class="link-off-black" href="https://nodejs.org/en/" target="_blank">NodeJS</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://expressjs.com/"
+                            target="_blank">ExpressJS</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="http://esri.github.io/calcite-web/" target="_blank">Calcite Web</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://github.com/ialixandroae/nodejsWebappsCreator" target="_blank">Project on GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </footer>
+
+    <!-- Just before end of body -->
+    <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/js/calcite-web.min.js"></script>
+    <script>
+        calcite.init()
+    </script>
+    <script id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.24.6'><\/script>".replace("HOST", location.hostname));
+    //]]></script>
+    
+</body>
+</html>

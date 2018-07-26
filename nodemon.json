@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "src/views/index.html",
+        "src/index.js",
+        "src/public/app.js"
+    ],
+    "ext": "ts",
+    "ignore": [
+        "src/**/*.spec.js"
+    ],
+    "exec": "node ./src/index.js --watch"
+}

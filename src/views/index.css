@@ -1,0 +1,36 @@
+.top-nav {
+    background: linear-gradient(to right,#387e36, #93c981) !important; 
+}
+
+.top-nav-title,
+.top-nav-link {
+    color: #fefefe;
+}
+
+.top-nav-title:hover {
+    color: #fefefe;
+}
+
+a.top-nav-link:hover,
+a.top-nav-link:focus {
+    border-bottom-color: #387e36;
+}
+
+.footer {
+    padding-top: 0.6rem;
+}
+
+.leader-3 {
+    margin-top: 0;
+}
+
+.svg-icon {
+    color: #3e863d;
+}
+
+#btnCreateApp,
+.btn.js-modal-toggle {
+    background-color: #3e863d; 
+    border: 1px solid #76ae64;
+}
+

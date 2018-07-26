@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>__name__</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.8/"></script>
+
+    <style>
+        html,
+        body,
+        #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        };
+    </style>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/widgets/Search",
+            "dojo/domReady!"
+        ], function (Map, MapView, Search) {
+
+            var _location = "__location__";
+
+            var searchWidget = new Search({
+                view: view
+            });
+
+            var map = new Map({
+                basemap: "__basemap__"
+            });
+
+            var view = new MapView({
+                container: "viewDiv",
+                map: map,
+                zoom: 4,
+                center: [15, 65] // longitude, latitude
+            });
+
+            var searchWidget = new Search({
+                view: view,
+                popupEnabled: false,
+                resultGraphicEnabled: false
+            });
+
+
+            function loadView() {
+                return new Promise((resolve, reject) => {
+                    if (view) {
+                        resolve()
+                    } else {
+                        reject()
+                    };
+                });
+            };
+
+            loadView().then(() => {
+                searchWidget.search(_location)
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="top-nav fade-in" style="background-color: __backgroundcolor__;">
+        <div class="grid-container">
+            <div class="column-24">
+                <div class="tablet-hide">
+                    <a href="#" class="top-nav-title" style="color: __textcolor__;">__name__</a>
+                    <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+                    </nav>
+                </div>
+    
+                <div class="tablet-show top-nav-flex">
+                    <header class="top-nav-flex-title">
+                        <a href="/" class="top-nav-link" style="color: __textcolor__;">__name__
+                        </a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="viewDiv"></div>
+</body>
+</html>
