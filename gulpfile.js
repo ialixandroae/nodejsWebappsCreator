@@ -12,7 +12,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
     browserSync.init(null, {
         files: ["./src/**/*.*"],
         browser: "google chrome",
-        port: 3000,
+        port: 4000,
     });
 });
 gulp.task('nodemon', function (cb) {
